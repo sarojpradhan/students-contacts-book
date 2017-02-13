@@ -1,0 +1,19 @@
+<h1> Details</h1>
+<dl>
+  <dt>Phone number:</dt>
+  <dd><%= @address_book.phone %></dd>
+
+  <dt>Street </dt>
+  <dd><%= @address_book.street %></dd>
+
+  <dt>Postal number</dt>
+  <dd><%= @address_book.post %> </dd>
+
+  <dt>City</dt>
+  <dd><%= @address_book.city%> </dd>
+
+  <dt>Country</dt>
+  <dd><%= @address_book.country %> </dd>
+</dl>
+
+<p><%= link_to 'Back', address_books_path %></p>

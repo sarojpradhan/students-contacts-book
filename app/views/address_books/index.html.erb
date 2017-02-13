@@ -1,0 +1,31 @@
+<h1>Contact details</h1>
+<div><%= link_to "Add", new_address_book_path %></div>
+<table>
+  <thead>
+  <tr>
+    <th>Phone</th>
+    <th>Street</th>
+    <th>Postal number</th>
+    <th>City</th>
+    <th>Country</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <% @address_books.each do |address| %>
+    <tr>
+
+      <td><%= address.phone %></td>
+      <td><%= address.street %></td>
+      <td><%= address.post %></td>
+      <td><%= address.city %></td>
+      <td><%= address.country %></td>
+      <td>
+        <%= link_to 'Show detail', address_book_path(address) %> |
+        <%= link_to 'Edit', edit_address_book_path(address) %> |
+        <%= link_to 'Delete', address, method: :delete, data: {confirm: 'Are you sure?'} %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
