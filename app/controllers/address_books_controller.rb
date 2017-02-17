@@ -17,7 +17,6 @@ class AddressBooksController < ApplicationController
   def create
     @address_book = current_user.address_books.new(address_book_params)
     if @address_book.save
-      flash[:success] = "You have successfully added contacts!"
       redirect_to address_books_path
     else
       render 'new'
@@ -31,7 +30,6 @@ class AddressBooksController < ApplicationController
   def update
     @address_book = current_user.address_books.find(params[:id])
     if @address_book.update_attributes(address_book_params)
-      flash[:success] = "Contact information updated successfully!"
       redirect_to address_books_path
     else
       render 'edit'
@@ -41,7 +39,6 @@ class AddressBooksController < ApplicationController
   def destroy
     @address_book = current_user.address_books.find(params[:id])
     if @address_book.destroy
-      flash[:success] = "Successfully deleted!"
       redirect_to address_books_path
     else
       redirect_to address_books_path
